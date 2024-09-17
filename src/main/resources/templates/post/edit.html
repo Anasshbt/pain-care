@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html layout:decorate="~{layout2}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{post.edit.headline}"/>
+</head>
+<body>
+<div layout:fragment="content1">
+    <main id="main">
+        <section id="featured-services">
+
+        </section>
+
+        <div layout:fragment="content">
+
+            <section class="contact" id="contact">
+                <div class="container">
+
+                    <div class="section-title">
+                        <h2 th:text="#{post.edit.headline}"></h2>
+                        <p></p>
+                    </div>
+
+                </div>
+
+                <div class="container" style="background-image:url(/assets/img/comment-background.jpg);
+                background-position: top;
+                background-size: cover;
+              border-radius: 10px; 
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+              padding: 20px; ">
+                    <div th:replace="~{fragments/forms::globalErrors('post')}"/>
+                    <form enctype="multipart/form-data" method="post" th:action="${requestUri}">
+                        <div th:replace="~{fragments/forms::inputRow(object='post', field='title')}"/>
+                        <div th:replace="~{fragments/forms::inputRow(object='post', field='description', type='textarea')}"/>
+
+                        <!-- Update the inputRow for 'image' to include file input -->
+                        <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="imageFile">Picture</label>
+                                <div class="file-upload col-sm-9">
+                                    <div class="file-select">
+                                        <div class="file-select-button" id="fileName">Choose File</div>
+                                        <div class="file-select-name" id="noFile">No file chosen...</div>
+                                <input accept="image/*" id="imageFile" name="imageFile"
+                                       type="file"/>
+                                    </div>
+                                </div>
+                            </div><script>
+                                $('#imageFile').bind('change', function () {
+   var filename = $("#imageFile").val();
+   if (/^\s*$/.test(filename)) {
+     $(".file-upload").removeClass('active');
+     $("#noFile").text("No file chosen..."); 
+   }
+   else {
+     $(".file-upload").addClass('active');
+     $("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
+   }
+ });
+ 
+                             </script><br>
+                        
+                        <div class="text-center">
+                            <input class="appointment-btn" th:value="#{post.edit.headline}" type="submit"/>
+                        </div>
+                    </form>
+                </div>
+            </section><!-- End Contact Section -->
+            <div class="text-center">
+                <a class="btn btn-secondary" th:href="@{/posts}" th:text="#{post.edit.back}"/>
+            </div><br>
+</body>
+</html>
