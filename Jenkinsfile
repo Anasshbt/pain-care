@@ -19,7 +19,7 @@ pipeline {
     }
     post {
       always {
-                // Archiver les artefacts (par exemple, les fichiers .jar ou autres fichiers générés)
+                // Archiver les artefacts (par exemple, les fichiers .jar ou autres fichiers générés hmmmmm)
                 archiveArtifacts artifacts: '**/build/libs/*.jar', allowEmptyArchive: true
 
                 // Vous pouvez également archiver d'autres fichiers comme des logs ou des rapports personnalisés
