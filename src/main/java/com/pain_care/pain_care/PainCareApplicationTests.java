@@ -3,7 +3,7 @@ package com.pain_care.pain_care;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+
 class PainCareApplicationTests {
 
     public static void main(String[] args) {
