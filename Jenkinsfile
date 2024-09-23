@@ -1,30 +1,29 @@
 pipeline {
     agent any
-
-    tools {
-        gradle 'Gradle' // Assurez-vous que "Gradle" correspond au nom de l'installation configurée dans Jenkins
-    }
-
     stages {
         stage('Build') {
             steps {
-                bat 'gradlew clean build'
+                script {
+                    bat './gradlew clean build'
+                }
             }
         }
         stage('Test') {
             steps {
-
-                bat 'gradlew test'
+                script {
+                    bat './gradlew test'
+                }
             }
         }
-    }
 
+    }
     post {
+
         success {
-            echo 'Build and tests succeeded!'
+            echo 'Build et test réussis!'
         }
         failure {
-            echo 'Build or tests failed.'
+            echo 'Échec du pipeline.'
         }
     }
 }
