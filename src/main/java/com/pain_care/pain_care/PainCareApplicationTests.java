@@ -19,9 +19,9 @@ class PainCareApplicationTests {
     static void testAddition() {
         int result = add(2, 3);
         if (result == 5) {
-            System.out.println("Test Addition: SUCCESS");
+            System.out.println("Test Addition: SUCCESS .");
         } else {
-            System.out.println("Test Addition: FAILED");
+            System.out.println("Test Addition: FAILED .");
         }
     }
 
