@@ -22,7 +22,7 @@ L'objectif de **PainCare** est d'offrir une plateforme accessible pour améliore
 - **Base de données** : PostgreSQL 🐘
 - **API de notifications** : Twilio (pour les SMS et notifications par email)
 - **Sécurité** : JWT (JSON Web Tokens) pour l'authentification sécurisée 🔐
-- **Déploiement** : Docker 🐳 et Kubernetes 🚀 (optionnel)
+- **Déploiement** : Docker 🐳 et Kubernetes 🚀 
 
 ## 📂 Structure du Projet
 
