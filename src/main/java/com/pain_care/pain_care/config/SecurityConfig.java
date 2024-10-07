@@ -39,7 +39,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((authorizeHttpRequests) ->
                         authorizeHttpRequests
-                                .requestMatchers("/", "/assets/**", "/css/**", "/js/**", "/images/**", "/blog/**","/posts/**").permitAll() // Allow public access to blog
+                                .requestMatchers("/", "/assets/**", "/css/**", "/js/**", "/images/**","/posts/**").permitAll() // Allow public access to blog
                                 .requestMatchers("/users/register").permitAll()
                                 .anyRequest().authenticated()
 
