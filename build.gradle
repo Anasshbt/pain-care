@@ -49,7 +49,7 @@ sonarqube {
     properties {
         property "sonar.projectKey", "painCare"
         property "sonar.host.url", "http://localhost:9000"
-        property "sonar.login", "squ_6cdf756b930970da1470e80e5b7e63b43cad483f"
+        property "sonar.token", "squ_6cdf756b930970da1470e80e5b7e63b43cad483f"
         property "sonar.sourceEncoding", "UTF-8"
         property "sonar.sources", "src/main/java"
 
